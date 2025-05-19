@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f0f2f5;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d1d9e6;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--background);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: #404040;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Neumorphic UI Elements */
+@layer components {
+  .btn-neumorph {
+    @apply flex items-center justify-center px-6 py-2 rounded-xl bg-background 
+      shadow-neumorph transition-all duration-200 hover:shadow-neumorph-pressed
+      focus:shadow-neumorph-pressed active:shadow-neumorph-pressed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white px-6 py-2.5 rounded-xl
+      shadow-[5px_5px_10px_rgba(0,0,0,0.1)] hover:bg-primary-600
+      transition-all duration-200 font-semibold tracking-wide;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 text-white px-6 py-2.5 rounded-xl
+      shadow-[5px_5px_10px_rgba(0,0,0,0.1)] hover:bg-secondary-600
+      transition-all duration-200 font-semibold tracking-wide;
+  }
+
+  .input-neumorph {
+    @apply bg-background border-none rounded-xl px-4 py-3 outline-none
+      shadow-neumorph-pressed transition-all duration-200 focus:shadow-neumorph w-full;
+  }
+
+  .card-neumorph {
+    @apply bg-background rounded-2xl shadow-neumorph p-6 transition-all duration-300;
+  }
+
+  .card-neumorph-hover {
+    @apply card-neumorph hover:shadow-neumorph-sm hover:translate-y-[-5px];
+  }
+
+  .level-card {
+    @apply card-neumorph-hover relative overflow-hidden;
+  }
+
+  .level-card-locked {
+    @apply opacity-70 grayscale;
+  }
+
+  .badge {
+    @apply inline-flex items-center justify-center px-3 py-1 text-sm
+      rounded-full font-medium;
+  }
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8c2d0;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0abc0;
+}
