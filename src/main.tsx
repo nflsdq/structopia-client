@@ -22,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
         draggable
         pauseOnHover
         theme="light"
+        toastClassName="shadow-neumorph-sm rounded-xl"
       />
     </BrowserRouter>
   </StrictMode>

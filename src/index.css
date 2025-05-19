@@ -17,12 +17,7 @@ body {
   color: #404040;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
 
@@ -88,6 +83,38 @@ h6 {
   100% {
     transform: translateY(0px);
   }
+}
+
+/* Scroll animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Data structure animations */
+@keyframes nodeHighlight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.node-highlight {
+  animation: nodeHighlight 0.5s ease-in-out;
+}
+
+/* Toast customization */
+.Toastify__toast {
+  @apply rounded-xl shadow-neumorph-sm !important;
+}
+
+.Toastify__toast-body {
+  @apply font-sans !important;
 }
 
 /* Custom Scrollbar */
