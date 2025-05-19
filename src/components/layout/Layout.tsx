@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import NavBar from './NavBar';
+import PageTransition from '../common/PageTransition';
 
 const Layout = () => {
   return (
@@ -14,7 +15,9 @@ const Layout = () => {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.3 }}
       >
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </motion.main>
     </div>
   );

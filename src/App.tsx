@@ -8,6 +8,7 @@ import PrivateRoute from './components/routes/PrivateRoute';
 import AdminRoute from './components/routes/AdminRoute';
 import Layout from './components/layout/Layout';
 import { useAuthStore } from './store/authStore';
+import { showToast } from './components/common/Toast';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
